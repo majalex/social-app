@@ -1,0 +1,13 @@
+.login form {
+    border: 1px solid black;
+    max-width: 680px;
+    margin: auto;
+    padding: 15px;
+}
+
+.login form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+}
