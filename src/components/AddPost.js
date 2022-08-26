@@ -7,7 +7,7 @@ const AddPost = (props) => {
     const [postContent, setPostContent] = useState("");
 
     const addPost = (e) => {
-        e.preventDefalut();
+        e.preventDefault();
 
         if (!postContent) {
             return;
