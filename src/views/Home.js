@@ -49,7 +49,7 @@ const Home = (props) => {
             {props.user && <AddPost getPrevPosts={getPrevPosts} />}
             <div className="postList">
                 {posts.map((post) => {
-                    return <Post post={post} key={post.id} />
+                    return <Post post={post} key={post.id} user={props.user} setPosts={setPosts}/>
                 })}
                 <button className='btn loadMore' onClick={getNextPosts}>Load more</button>
             </div>
