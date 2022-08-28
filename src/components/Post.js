@@ -36,6 +36,19 @@ const Post = (props) => {
             })
     }
 
+    const unfollow = (id) => {
+        axios
+        .post('https://akademia108.pl/api/social-app/follows/disfollow', {
+            leader_id: id,
+        })
+        .then(() => {
+            props.getLatestPosts();
+        })
+        .catch((error) => {
+            console.error(error)
+        })
+    }
+
     return (
         <div className="post">
             <div className="avatar">
@@ -53,8 +66,12 @@ const Post = (props) => {
                         </button>
                     )}
 
+                    {props.user && props.user.username !== props.post.user.username && (<button className='btn' onClick={() => unfollow(props.post.user.id)}>Unfollow</button>)}
+
                     {props.user && (
-                        <button className='btn' onClick={() => likePost(props.post.id, doesUserLiked)}>{doesUserLiked ? 'Dislike' : 'Like'}</button>
+                        <button className='btn' onClick={() => likePost(props.post.id, doesUserLiked)}>
+                            {doesUserLiked ? 'Dislike' : 'Like'}
+                        </button>
                     )}
 
 

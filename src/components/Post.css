@@ -37,6 +37,10 @@
     text-align: right;
 }
 
+.post .likes button {
+    margin: 0 5px;
+}
+
 .deleteConfirmation {
     position: fixed;
     background-color: white;
