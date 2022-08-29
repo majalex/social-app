@@ -27,13 +27,13 @@ const AppNav = (props) => {
         <nav className="mainNav">
             <ul>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/social-app">Home</Link>
                 </li>
                 {!props.user && <li>
-                    <Link to="/login">Login</Link>
+                    <Link to="/social-app/login">Login</Link>
                 </li>}
                 {!props.user && <li>
-                    <Link to="/signup">SignUp</Link>
+                    <Link to="/social-app/signup">SignUp</Link>
                 </li>}
                 {props.user && <li>
                     <Link to="/" onClick={handleLogout}>Logout</Link>
